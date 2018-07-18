@@ -20,12 +20,12 @@ class App extends React.Component {
     componentWillReceiveProps (nextProps) {
     }
 
+    // 退出销毁
     componentWillUnmount () {
         this.sortable.destroy()
     }
 
     onEnd = (evt) => {
-        // console.log('onend.......................')
         let { dataSource }  = this.state
         var itemEl = evt.item;  // dragged HTMLElement
         evt.oldIndex;  // element's old index within old parent

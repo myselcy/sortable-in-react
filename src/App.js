@@ -32,6 +32,9 @@ class App extends Component {
   }
   sortableChange = (value) => {
     console.log('value...', value)
+    this.setState({
+      dataSource: value
+    })
   }
   render() {
     const { dataSource } = this.state
@@ -48,7 +51,6 @@ class App extends Component {
                     <div 
                         className="list-group-item"
                         key={item.key} 
-                        // onClick={()=>{}
                         style={{ cursor: 'pointer'}}
                     >
                         <span style={{fontSize: 12}}>{item.label}</span>
