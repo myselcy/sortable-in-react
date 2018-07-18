@@ -1,6 +1,6 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -26,3 +26,20 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.ghost {
+  opacity: .5;
+  background: #C8EBFB;
+}
+
+body {
+  padding: 20px;
+}
+.list-group-item {
+  cursor: move;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  margin-bottom: -1px;
+  padding: 10px 15px;
+}
+

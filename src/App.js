@@ -1,18 +1,62 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Sortable from './component/Sortable'
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        dataSource: [{
+          key: 'item1',
+          label: 'item1'
+        },{
+          key: 'item2',
+          label: 'item2'
+        },{
+          key: 'item3',
+          label: 'item3'
+        },{
+          key: 'item4',
+          label: 'item4'
+        },{
+          key: 'item5',
+          label: 'item5'
+        },{
+          key: 'item6',
+          label: 'item6'
+        },{
+          key: 'item7',
+          label: 'item7'
+        },],
+    };
+  }
+  sortableChange = (value) => {
+    console.log('value...', value)
+  }
   render() {
+    const { dataSource } = this.state
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Sortable 
+          key={Math.random()}
+          dataSource={this.state.dataSource} 
+          onChange={this.sortableChange} 
+        >
+          {
+            dataSource.map((item, index)=>{
+                return (
+                    <div 
+                        className="list-group-item"
+                        key={item.key} 
+                        // onClick={()=>{}
+                        style={{ cursor: 'pointer'}}
+                    >
+                        <span style={{fontSize: 12}}>{item.label}</span>
+                    </div>
+                )
+            })
+          }
+        </Sortable>
       </div>
     );
   }
