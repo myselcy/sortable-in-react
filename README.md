@@ -116,7 +116,7 @@ class App extends React.Component {
         dataSource.splice(evt.oldIndex, 1)
         dataSource.splice(evt.newIndex, 0, tempItem)
         this.setState(dataSource,()=>{
-            // 拖拽完成后触发 onChange 把值传出去
+            // 拖拽完成后触发 onChange 把值传出去
             this.props.onChange && this.props.onChange(dataSource)            
         })
     }
@@ -138,6 +138,6 @@ class App extends React.Component {
 
 export default App;
 ```
-想要更多扩展可以查看[Sortable文档](https://github.com/RubaXa/Sortable)
+想要更多扩展可以查看[Sortable文档](https://github.com/RubaXa/Sortable)
 
 
